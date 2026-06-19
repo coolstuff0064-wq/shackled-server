@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: shackled-server
+    runtime: node
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: JWT_SECRET
+        generateValue: true
+      - key: DB_PATH
+        value: /opt/render/project/src/shackled.db
